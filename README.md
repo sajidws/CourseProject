@@ -13,26 +13,26 @@ The following instructions have been tested with:
 	Tested on Windows 10 with: elasticsearch 7.10.0, Flask 1.1.2, Flask-SocketIO 4.3.1, metapy 0.2.13, numpy 1.19.2, pytoml 0.1.21
 	
 3. Create the index in ElasticSearch
-	`python create_es_index.py` from `CourseProject/`
+	`python create_es_index.py` from `CourseProject/`.
 	Note: this is required only one-time for the initial deployment`
 
-4. Download tf_idf_outputs.zip from https://drive.google.com/file/d/19ia7CqaHnW3KKxASbnfs2clqRIgdTFiw/view?usp=sharing
+4. Download tf_idf_outputs.zip from https://drive.google.com/file/d/19ia7CqaHnW3KKxASbnfs2clqRIgdTFiw/view?usp=sharing .
 	Unzip the file and place the folder 'tf_idf_outputs' under `CourseProject/static`
 
-5. Download cs410.zip from https://drive.google.com/file/d/1Xiw9oSavOOeJsy_SIiIxPf4aqsuyuuh6/view?usp=sharing
-	Unzip the file and place the folder 'cs410' under `CourseProject/pdf.js/static/slides/`
+5. Download cs410.zip from https://drive.google.com/file/d/1Xiw9oSavOOeJsy_SIiIxPf4aqsuyuuh6/view?usp=sharing .
+	Use 7-Zip (https://www.7-zip.org/download.html) to unzip the file and place the folder 'cs410' under `CourseProject/pdf.js/static/slides/`
    
 6. Install NPM (Node.js) for installing gulp
-	Windows 10: follow step #1 in https://zestcode.co.uk/how-to-install-gulp-on-windows-10/
+	Windows 10: follow step #1 in https://zestcode.co.uk/how-to-install-gulp-on-windows-10/ .
 		Ensure PATH contains these directories in the order: C:\Users\<username>\AppData\Roaming\npm\node_modules;C:\Users\<username>\AppData\Roaming\npm;C:\Program Files\nodejs
 	Note: this is required only one-time for the initial deployment
 
 7. Install gulp
-	`npm install gulp -g` from `CourseProject/pdf.js/build/generic/web`
+	`npm install gulp -g` from `CourseProject/pdf.js/build/generic/web` .
 	Note: this is required only one-time for the initial deployment
 
 8. Start gulp server
-	`gulp server` from `CourseProject/pdf.js/build/generic/web`
+	`gulp server` from `CourseProject/pdf.js/build/generic/web` .
 		Ensure PATH contains these directories in the order: C:\Users\<username>\AppData\Roaming\npm\node_modules;C:\Users\<username>\AppData\Roaming\npm;C:\Program Files\nodejs
 	
 8. In another terminal window, run `python app.py` from `CourseProject/`
