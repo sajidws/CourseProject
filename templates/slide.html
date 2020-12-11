@@ -239,7 +239,8 @@ $(function() {
     </div>
 <div class="row main_row" >
 <div class="col-sm-12 main"> 
-  <h2>{{' '.join(course_name.split('-')).title()}}</h2>
+  <h2>{{' '.join(course_name.split('-')).upper()}}</h2>
+  <p>{{' '.join(slide_name.split('----')[1].split('_')[1].split('-')).title() + ' Lesson ' + slide_name.split('_')[3].split('-')[2].title()}}</p>
   <p>{{slide_name.split('----')[-1][:-4].title()}}</p>
     <div style="overflow:auto;-webkit-overflow-scrolling:touch">
   <iframe id='main_slide' type='application/pdf' src="{{pdf_url}}/build/generic/web/viewer.html?file={{pdf_url}}/static/slides/{{course_name}}/{{lec_name}}/{{slide_name}}#toolbar=0&navpanes=0&scrollbar=0&view=FitH"

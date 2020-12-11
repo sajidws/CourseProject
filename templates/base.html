@@ -42,7 +42,7 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Courses <span class="caret"></span></a>
          <ul class="dropdown-menu" style="background-color: #E8E8E8; opacity: 0.97;max-height:  100vh; overflow:scroll;">
            {% for j in range(num_courses) %}
-            <li><a href="{{base_url}}/slide/{{course_names[j]}}/0">{{' '.join(course_names[j].split('-')).title()}}</a></li>
+            <li><a href="{{base_url}}/slide/{{course_names[j]}}/0">{{' '.join(course_names[j].split('-')).upper()}}</a></li>
           
 
             {% endfor %}
