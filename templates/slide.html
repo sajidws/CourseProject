@@ -4,8 +4,8 @@
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Lectures <span class="caret"></span></a>
          <ul class="dropdown-menu" style="height:auto; max-width: 850px; left:-225px; max-height:  100vh; overflow:scroll;opacity:0.97;background-color: #E8E8E8;">
 {% for i in lnos %}
-            <li><a href="{{base_url}}/slide/{{course_name}}/{{i}}">{{' '.join(lec_names[i].replace('.txt','').replace('_','-').split('-')).title()}}</a></li>
-             {% endfor %}
+            <li><a href="{{base_url}}/slide/{{course_name}}/{{i}}">{{' '.join(lec_names[i].split('_')[3].split('-')).title()}}</a></li>
+{% endfor %}
           </ul>
         </li>
            

@@ -121,7 +121,8 @@ def get_course_names():
     course_names = sorted(os.listdir(slides_path))
     cn_cpy = list(course_names)
     for cn in cn_cpy:
-        if cn!='cs-410':
+    #    if cn!='cs-410':
+        if not cn.startswith('cs'):
             course_names.remove(cn)
     num_course = len(course_names)
     return course_names,num_course
@@ -228,10 +229,12 @@ def get_related_slides(slide_name):
         for r in related_slides:
             comp = r.split('----')
             #disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() + ' , ' + ' '.join(comp[-1].replace('.pdf','').split('-')).title())
+            # ' '.join(lec_names[i].split('_')[3].split('-')).title()
+            #related_slide_name = ' '.join(r.split('_')[3].split('-')).title()
             related_slide_name = ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() 
             slide_course_name = ' '.join(slide_comp[0].replace('_','-').split('-')).title()
             related_slide_course_name = ' '.join(comp[0].replace('_','-').split('-')).title()
-            trimmed_name = ' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(related_slide_name)
+            trimmed_name = ' '.join(comp[0].replace('_','-').split('-')).upper() + ' : ' + trim_name(related_slide_name)
             if trimmed_name in related_slide_trim_names:
                 continue
             else:
@@ -241,7 +244,8 @@ def get_related_slides(slide_name):
             if no_keywords==True:
                 continue
             filtered_related_slides.append(r)
-            disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(related_slide_name))
+            disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).upper() + ': ' + ' '.join(r.split('_')[3].split('-')).title())
+            #disp_strs.append(' '.join(comp[0].replace('_','-').split('-')).upper() + ' : ' + trim_name(related_slide_name))
             disp_snippets.append(snippet)
             disp_colors.append(color)
             course_names.append(comp[0])
