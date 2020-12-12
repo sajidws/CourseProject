@@ -20,7 +20,8 @@ The following instructions have been tested with:
 	Unzip the file and place the folder 'tf_idf_outputs' under `CourseProject/static`
 
 5. Download cs410.zip from https://drive.google.com/file/d/1Xiw9oSavOOeJsy_SIiIxPf4aqsuyuuh6/view?usp=sharing .
-	Use 7-Zip (https://www.7-zip.org/download.html) to unzip the file and place the folder 'cs410' under `CourseProject/pdf.js/static/slides/`
+	Download cs425.zip from https://drive.google.com/file/d/1IWxuYF1fGHlU1VZn5xfXfyCJxUV-sIRI/view?usp=sharing
+	Use 7-Zip (https://www.7-zip.org/download.html) to unzip the files and place the folders 'cs-410' and 'cs-425' under `CourseProject/pdf.js/static/slides/`
    
 6. Install NPM (Node.js) for installing gulp
 	Windows 10: follow step #1 in https://zestcode.co.uk/how-to-install-gulp-on-windows-10/ .
