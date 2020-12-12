@@ -168,7 +168,7 @@ def get_disp_str(slide_name):
     slide_no = slide_name.split('----')[-1][:-4].title()
     comp = slide_name.split('----')
     slide_name = ' '.join(comp[-2].replace('.txt','').replace('_','-').split('-')).title() 
-    return ' '.join(comp[0].replace('_','-').split('-')).title() + ' : ' + trim_name(slide_name) + ', ' +slide_no 
+    return ' '.join(comp[0].replace('_','-').split('-')).upper() + ' : ' + trim_name(slide_name) + ', ' +slide_no 
 
 
 def get_next_slide(course_name,lno,curr_slide=None):
