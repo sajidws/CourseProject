@@ -122,7 +122,7 @@ def get_course_names():
     cn_cpy = list(course_names)
     for cn in cn_cpy:
     #    if cn!='cs-410':
-        if not cn.startswith('cs'):
+        if not cn.startswith('cs-'):
             course_names.remove(cn)
     num_course = len(course_names)
     return course_names,num_course
@@ -144,7 +144,7 @@ def load_related_slides():
                     break
             name_comp = pdf_name.split('----')
             course_name = name_comp[0]
-            if course_name != 'cs-410':
+            if not course_name.startswith('cs-'):
                 continue
             lec_name ='----'.join(name_comp[1:-1])
             if os.path.exists(os.path.join(slides_path,course_name,lec_name,pdf_name)):
