@@ -1,3 +1,6 @@
 # CourseProject
 
-Please fork this repository and paste the github link of your fork on Microsoft CMT. Detailed instructions are on Coursera under Week 1: Course Project Overview/Week 9 Activities.
+The project documentation is in the file 'CS410-Project-Documentation-Data-Miners'
+The demo recording link for media space is in the text file 'Demo-Recording-Link-DataMiners-Educational-Web-Enhancements.txt'
+
+The other two documents are from previous milestones: project proposal and progress report
