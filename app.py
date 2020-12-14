@@ -118,7 +118,7 @@ def set_sess(url,ses_disp_str):
 def modify_url_domain(url):
 	return url.replace('http://localhost:8096/','http://timan102.cs.illinois.edu/explanation//')
 
-@app.route('/')
+@app.route('/t')
 def index():
     global COURSE_NAMES,NUM_COURSES,NUM_VIS
     COURSE_NAMES,NUM_COURSES = model.get_course_names()
@@ -298,6 +298,27 @@ def log_action():
 	
 	return resp 
 
+@app.route('/')
+def ListPage():
+    global COURSE_NAMES,NUM_COURSES,NUM_VIS
+    COURSE_NAMES,NUM_COURSES = model.get_course_names()
+    model.load_related_slides()
+    vis_urls,vis_strs = get_prev_urls()
 
+    return render_template("ListPage.html",course_names=COURSE_NAMES,num_courses=NUM_COURSES,vis_urls=vis_urls,vis_strs=vis_strs,num_vis=NUM_VIS)
+    
+#@app.route('/ListPage/<course_name>/<lno>')
+#def ListPage(course_name,lno):
+	#global NUM_VIS
+	#next_slide_name,lno,lec_name,(num_related_slides,related_slides,disp_str,related_course_names,rel_lnos,rel_lec_names,disp_color,disp_snippet),lec_names,lnos,ses_disp_str= resolve_slide(course_name,lno,'drop-down')
+	#vis_urls,vis_strs = get_prev_urls()
+
+	#if next_slide_name is not None:
+		#set_sess(request.url,ses_disp_str)
+	
+	#return render_template("Listpage.html",slide_name=next_slide_name,course_name=course_name,num_related_slides=num_related_slides,related_slides = related_slides,disp_str=disp_str,disp_color=disp_color,disp_snippet=disp_snippet,related_course_names=related_course_names,lno=lno,lec_name=lec_name,lec_names=lec_names,lnos=lnos,course_names=COURSE_NAMES,num_courses=NUM_COURSES,rel_lnos=rel_lnos,rel_lec_names=rel_lec_names,vis_urls=vis_urls,vis_strs=vis_strs,num_vis=NUM_VIS)
+
+	
+    
 if __name__ == '__main__':
     socketio.run(app,host='localhost',port=8096)
