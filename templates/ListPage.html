@@ -1,0 +1,82 @@
+<!-- ListPage.html-->
+{% extends "base.html" %}
+
+{% set base_url = 'http://localhost:8096' %}
+{% set pdf_url = 'http://localhost:8888' %}
+ 
+ {% block body %}
+<style>
+table{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+}
+
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+td, th {
+  border: 1px solid #FFFFFF;
+  text-align: left;
+  padding: 8px;
+  }
+
+tr:nth-child(even) {
+  background-color: #FFFFFF;
+}
+</style>
+ 
+  
+<div class="container-fluid main_cnt">
+<div id="explanation-container" class="col-sm-12">
+<div >
+<!--<a style="font-weight:bold"  href="PageList">Courses Listing</a> -->
+
+<!--<li>-->
+<!--<a style="font-weight:bold"  href="{{base_url}}">Main Page</a> -->
+
+<br></br>
+<br></br>
+<br></br>
+<table class="center">
+	<tr >
+		<th style="text-align:center;font-weight:bold;background-color:#00ABFF">
+		<p style="text-align:center;font-weight:bold;background-color:#00ABFF">The following courses are available in EducationalWeb:</p>
+		</th>
+    </tr>
+
+	<tr>
+		<th>
+		<a style="background-color:#FFFFFF; opacity: 0.97;max-height:  100vh;">
+           {% for j in range(num_courses) %}
+         <a href="{{base_url}}/slide/{{course_names[j]}}/0"><p style="text-align:center;font-weight:bold";>{{' '.join(course_names[j].split('-')).upper()}}</p></a>
+ 
+            {% endfor %}
+        </a>	
+		</th>
+    </tr>
+</table>       
+<!--</li>-->
+
+<!--<a style="font-weight:bold" href="#">Courses </a>
+         <ul class="dropdown-menu" style="background-color: #E8E8E8; opacity: 0.97;max-height:  100vh; overflow:scroll;">
+           {% for j in range(num_courses) %}
+            <li><a href="{{base_url}}/slide/{{course_names[j]}}/0">{{' '.join(course_names[j].split('-')).upper()}}</a></li>
+          
+
+            {% endfor %}
+        </ul>	-->
+<!--</li>-->
+
+
+
+</div >
+
+
+{% endblock %}
+
+
+
+  
